@@ -1,0 +1,20 @@
+# SafeVLA-Retrieval default configuration
+dataset:
+  n_common: 120       # scenes per common scenario
+  n_rare: 30          # scenes per rare scenario
+  seed: 0
+
+encoder:
+  embed_dim: 128
+  backbone: resnet18
+  pretrained: true
+
+training:
+  epochs: 30
+  batch_size: 32
+  lr: 0.001
+  temperature: 0.1    # supervised contrastive temperature
+
+retrieval:
+  k: 5                # neighbours retrieved per query
+  ood_threshold: 0.5  # above this OOD score, fall back to retrieval
